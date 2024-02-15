@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    height: 100vh;
+}
+.left-side{
+    flex: 1;
+}
+.left-side ul{
+    list-style: none;
+}
+.content{
+    flex: 3;
+    background-color: #FFF7F1;
+}
