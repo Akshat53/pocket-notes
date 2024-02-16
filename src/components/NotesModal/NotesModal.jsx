@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Styles from "./notesModal.module.css";
 
@@ -33,7 +34,7 @@ const NotesModal = (props) => {
   const [newItem, setNewItem] = useState({
     title: "",
     colour: "#BED1CF",
-    content: [],
+    
   });
   const [error, setError] = useState({
     name: null,

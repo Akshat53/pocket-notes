@@ -1,0 +1,13 @@
+.header {
+  background-color: #bed1cf;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 400;
+  font-size: 24px;
+}
+.header div{
+  margin-left: 20px;
+}
+

@@ -8,7 +8,21 @@
 .left-side ul{
     list-style: none;
 }
-.content{
+.right-side{
     flex: 3;
-    background-color: #FFF7F1;
+    background-color: #DAE5F5;
+    position: relative;
+}
+.content {
+    height: 77vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1);
+    
+  }
+  .empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }

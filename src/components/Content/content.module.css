@@ -1,0 +1,46 @@
+.content {
+  height: calc(100vh - 220px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1);
+}
+.footer {
+  background-color: #bed1cf;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.content ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ flex-direction: column;
+ height: 100%;
+
+}
+.ItemBox { 
+  background-color: white;
+  width: 90%;
+  margin: 20px;
+  border-radius: 10px;
+
+}
+.content ul div li{
+  font-size: 15px;
+  font-weight: 400;
+  padding: 20px;
+  
+}
+.content ul div p{
+  text-align: right;
+  font-size: 13px;
+  padding: 15px;
+  margin-right: 10px;
+}

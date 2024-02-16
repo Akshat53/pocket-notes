@@ -1,0 +1,22 @@
+.contentInput {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  width: 90%;
+  border-radius: 20px;
+}
+.contentInput textarea {
+  width: 100%;
+  border: none;
+  font-size: large;
+  font-family: "Rubik", sans-serif;
+}
+.contentInput textarea:focus {
+  outline: none;
+}
+
+.contentInput button {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+}
