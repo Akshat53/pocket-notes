@@ -6,7 +6,7 @@ const ContentInput = (props) => {
   const {onChange,onSubmit,value,disable} = props
   return (
     <div className={Styles.contentInput}>
-      <textarea onChange={onChange} value={value}/>
+      <textarea onChange={onChange} value={value} placeholder="Enter Your Text.........................."/>
       <button onClick={onSubmit} disabled={disable}><IoMdSend /></button>
     </div>
   );

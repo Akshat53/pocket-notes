@@ -5,7 +5,6 @@ import Content from "../../components/Content/Content";
 import ContentHeader from "../../components/ContentHeader/ContentHeader";
 import Empty from "../../components/Empty/Empty";
 
-
 const WebLayout = () => {
   const [item, setItem] = useState(null);
   const selectedItem = (newItem) => {
@@ -24,9 +23,7 @@ const WebLayout = () => {
             <Content item={item} />
           </>
         ) : (
-         
-          <Empty/>
-    
+          <Empty />
         )}
       </div>
     </div>
