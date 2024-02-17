@@ -15,8 +15,10 @@ Check out the live demo of Pocket Notes: [Pocket Notes Demo](https://pocket-note
 
 ## Screenshots
 
-![Pocket Notes Preview](/src/assets/ss1.png)(/src/assets/ss2.png)
-![Pocket Notes Mobile Preview](/src/assets/ss3.png)(/src/assets/ss4.png)
+![Pocket Notes Preview](/src/assets/ss1.png)
+![Pocket Notes Preview](/src/assets/ss2.png)
+![Pocket Notes Mobile Preview](/src/assets/ss3.png)
+![Pocket Notes Mobile Preview](/src/assets/ss4.png)
 
 ## Technologies Used
 
