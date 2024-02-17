@@ -3,6 +3,7 @@
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1);
+  background-color: #DAE5F5;
 }
 .footer {
   background-color: #bed1cf;
@@ -22,6 +23,7 @@
   justify-content: center;
   align-items: center;
  flex-direction: column;
+
 
 
 }

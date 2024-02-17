@@ -29,6 +29,7 @@ const SideBar = (props) => {
       selectedItem(items);
     }
   };
+  // console.log(items)
 
   return (
     <div className={Styles.sidebar}>

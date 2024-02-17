@@ -59,8 +59,8 @@ const Content = (props) => {
               .slice()
               .reverse()
               .map((textItem, index) => (
-                <div  className={Styles.ItemBox}>
-                  <li key={index}>{textItem.text}</li>
+                <div  className={Styles.ItemBox} key={index}>
+                  <li >{textItem.text}</li>
                   <p> {textItem.dateTime}</p>
                 </div>
               )):<Empty/>}

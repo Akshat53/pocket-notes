@@ -10,6 +10,7 @@ const WebLayout = () => {
   const selectedItem = (newItem) => {
     setItem(newItem);
   };
+  // console.log(item)
 
   return (
     <div className="container">

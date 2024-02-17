@@ -1,7 +1,10 @@
 import "./App.css";
+
+import MobileContent from "./components/MobileContent/MobileContent";
 import MobileLayout from "./views/MobileLayout";
 import WebLayout from "./views/WebLayout";
 import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const [screenSize, setScreenSize] = useState(window.innerWidth);
@@ -10,7 +13,12 @@ function App() {
     setScreenSize(window.innerWidth);
   };
   window.addEventListener("resize", checkScreenSize);
-  return <div>{screenSize > 500 ? <WebLayout /> : <MobileLayout />}</div>;
+  return <div>{screenSize > 500 ? <WebLayout /> : ( <Router>
+    <Routes> 
+      <Route path="/" element={<MobileLayout />} />
+      <Route path="/notes" element={<MobileContent />} />
+    </Routes>
+  </Router>)}</div>;
 }
 
 export default App;
