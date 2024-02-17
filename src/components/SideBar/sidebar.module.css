@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 .sidebar ul{
     margin: 0;
     padding: 20px;
@@ -17,7 +18,7 @@
 }
 .addGroup {
     position: absolute;
-    bottom: 50px;
+    bottom: 20px;
     right: 40px;
     width: 70px; 
     height: 70px;
@@ -36,3 +37,36 @@
     height: 80px;
   }
   }
+  .emptyItem{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+   
+    height: 100%;
+    color: #E78895;
+    font-family: "Caveat", cursive;
+
+  
+  }
+  .emptyItem button{
+    background-color: black;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    
+ 
+  }
+  .sidebar ul::-webkit-scrollbar {
+    width: 10px; 
+  }
+  
+  .sidebar ul::-webkit-scrollbar-thumb {
+    background-color: #ccc; 
+    border-radius: 10px;
+  }
+  
+  .sidebar ul::-webkit-scrollbar-track {
+    background-color: #f1f1f1; 
+  }
+  

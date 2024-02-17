@@ -15,6 +15,7 @@ const WebLayout = () => {
   return (
     <div className="container">
       <div className="left-side">
+        
         <SideBar selectedItem={selectedItem} />
       </div>
       <div className="right-side">
