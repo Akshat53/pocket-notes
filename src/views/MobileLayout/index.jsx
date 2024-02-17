@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./mobileLayout.css";
 import SideBar from "../../components/SideBar/SideBar";
+import "./mobileLayout.css"
 
 const MobileLayout = () => {
   const [item, setItem] = useState(null);
@@ -16,7 +17,7 @@ const MobileLayout = () => {
   // console.log(selectedItem)
 
   return (
-    <div>
+    <div className="mobile-container">
       <SideBar selectedItem={selectedItem} />
     </div>
   );

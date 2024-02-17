@@ -13,18 +13,19 @@ const ContentHeader = (props) => {
   }
 
   return (
-    <div className={Styles.headerM}>
+    
       <div className={Styles.header}>
-        <ItemAvatar
+     
+        <IoMdArrowRoundBack onClick={handleClick}/>
+     
+        <ItemAvatar 
           initials={ParseInitials(selectedI?.title).toUpperCase()}
           colour={selectedI?.colour}
         />
-        <p>{selectedI?.title}</p>
+        <p className={Styles.title}>{selectedI?.title}</p>
       </div>
-      <button onClick={handleClick}>
-        <IoMdArrowRoundBack />
-      </button>
-    </div>
+    
+ 
   );
 };
 

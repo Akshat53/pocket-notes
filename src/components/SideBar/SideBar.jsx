@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Styles from "./sidebar.module.css";
 import ItemList from "../ListItem/ListItem";
 import NotesModal from "../NotesModal/NotesModal";
+import { FaPlus } from "react-icons/fa";
 
 const SideBar = (props) => {
   const { selectedItem } = props;
@@ -34,6 +35,7 @@ const SideBar = (props) => {
   return (
     <div className={Styles.sidebar}>
       <h2>Pocket Notes</h2>
+
       <ul>
         {items.map((item, index) => {
           return (
@@ -46,7 +48,7 @@ const SideBar = (props) => {
         })}
       </ul>
       <button onClick={addGroup} className={Styles.addGroup}>
-        +
+        <FaPlus />
       </button>
 
       {openModal && (

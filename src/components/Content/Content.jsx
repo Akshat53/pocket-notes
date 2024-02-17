@@ -61,7 +61,7 @@ const Content = (props) => {
               .map((textItem, index) => (
                 <div  className={Styles.ItemBox} key={index}>
                   <li >{textItem.text}</li>
-                  <p> {textItem.dateTime}</p>
+                  <p className={Styles.dateTime}> {textItem.dateTime}</p>
                 </div>
               )):<Empty/>}
         </ul>

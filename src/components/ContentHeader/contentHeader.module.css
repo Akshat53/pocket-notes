@@ -1,36 +1,34 @@
 .header {
-
+  background-color: #bed1cf;
 
   display: flex;
   align-items: center;
-  gap: 20px;
+
   font-weight: 400;
   font-size: 24px;
+  width: 100%;
+  justify-content: flex-start;
 }
-.header div{
-  margin-left: 20px;
+.title {
+  margin-left: 10px;
 }
-.headerM{
-  display: flex;
-  background-color: #bed1cf;
-  justify-content: space-between;
-
-
-}
-.headerM button{
-
+.header svg {
   display: none;
   background-color: transparent;
 
   font-size: 40px;
   border: none;
-    margin-top: 10px;
+
+
 }
 
-@media only screen and (max-width: 500px) {
- .headerM button{
-  display: block;
-  
- }
-}
 
+@media only screen and (max-width: 600px) {
+  .header svg {
+    display: block;
+    color: #e78895;
+  }
+  .header p {
+    font-size: 18px;
+  }
+}

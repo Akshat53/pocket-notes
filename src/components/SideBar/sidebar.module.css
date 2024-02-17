@@ -5,22 +5,34 @@
     overflow-y: scroll;
 }
 .sidebar{
-    position: relative;
-   
+
+   margin-top: 10px;
+   position: relative;
+    
 }
 .sidebar h2{
     text-align: center;
+    margin: 0;
+   
 }
 .addGroup {
     position: absolute;
     bottom: 50px;
-    right: 20px;
+    right: 40px;
     width: 70px; 
     height: 70px;
     border-radius: 50%; 
     border: none;
     background-color: #E78895;
-    font-size: 3rem;
+   font-size: 20px;
     color: white;
+  
+  
 
 }
+@media only screen and (max-width: 500px) {
+  .addGroup{
+    width: 80px; 
+    height: 80px;
+  }
+  }

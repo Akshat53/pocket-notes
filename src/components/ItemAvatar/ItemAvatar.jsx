@@ -5,7 +5,7 @@ const ItemAvatar = (props) => {
   const { colour, initials } = props;
   return (
     <div className={Styles.avatar} style={{ backgroundColor: colour }}>
-      {initials}
+      {initials.toUpperCase()}
     </div>
   );
 };
