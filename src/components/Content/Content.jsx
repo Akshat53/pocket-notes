@@ -9,11 +9,16 @@ const Content = (props) => {
   const existingData = JSON.parse(localStorage.getItem("modalData"));
   const [selectedItem, setSelectedItem] = useState();
   const [inputValue, setInputValue] = useState("");
-  const [itemArray, setItemArray] = useState(existingData || []);
+  const [itemArray, setItemArray] = useState([]);
 
   useEffect(() => {
+    if (existingData) setItemArray(existingData);
     setSelectedItem(item);
   }, [item]);
+
+  useEffect(() => {
+    localStorage.setItem("modalData", JSON.stringify(itemArray));
+  }, [itemArray]);
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -28,21 +33,20 @@ const Content = (props) => {
       text: inputValue,
     };
 
-    const updatedTextArray = [...selectedItem.text || [], newItem];
-    const updatedSelectedItem = {
-      ...selectedItem,
-      text: updatedTextArray,
-    };
+    const newTextArray = [...(selectedItem.text || []), newItem];
 
-    setItemArray((prevItemArray) =>
-      prevItemArray.map((prevItem) =>
-        prevItem.title === updatedSelectedItem.title && prevItem.colour === updatedSelectedItem.colour
-          ? updatedSelectedItem
-          : prevItem
-      )
-    );
+    selectedItem.text = newTextArray;
 
-    setSelectedItem(updatedSelectedItem);
+    const updatedItemArray = itemArray.map((item) => {
+      if (
+        item.title === selectedItem.title &&
+        item.colour === selectedItem.colour
+      ) {
+        return selectedItem;
+      }
+      return item;
+    });
+    setItemArray(updatedItemArray);
     setInputValue("");
   };
 
@@ -50,26 +54,22 @@ const Content = (props) => {
     const updatedText = selectedItem.text.filter(
       (textItem) => textItem.dateTime !== itemToRemove.dateTime
     );
-  
+
     const updatedSelectedItem = {
       ...selectedItem,
       text: updatedText,
     };
-  
-    setItemArray((prevItemArray) =>
-      prevItemArray.map((prevItem) =>
-        prevItem.title === updatedSelectedItem.title && prevItem.colour === updatedSelectedItem.colour
-          ? updatedSelectedItem
-          : prevItem
-      )
+
+    const updatedItemArray = itemArray.map((item) =>
+      item.title === updatedSelectedItem.title &&
+      item.colour === updatedSelectedItem.colour
+        ? updatedSelectedItem
+        : item
     );
-  
-    setSelectedItem(updatedSelectedItem);
-  
-   
-    localStorage.setItem("modalData", JSON.stringify(updatedSelectedItem));
+
+    setItemArray(updatedItemArray);
+    setSelectedItem(updatedSelectedItem); // Update selectedItem state
   };
-  
 
   return (
     <>
