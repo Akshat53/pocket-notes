@@ -2,17 +2,16 @@ import React, { useEffect, useState } from "react";
 import Styles from "./content.module.css";
 import ContentInput from "../ContentInput/ContentInput";
 import Empty from "../Empty/Empty";
-
+import { MdDeleteSweep } from "react-icons/md";
 
 const Content = (props) => {
   const { item } = props;
   const existingData = JSON.parse(localStorage.getItem("modalData"));
   const [selectedItem, setSelectedItem] = useState();
   const [inputValue, setInputValue] = useState("");
-  const [itemArray, setItemArray] = useState([]);
+  const [itemArray, setItemArray] = useState(existingData || []);
 
   useEffect(() => {
-    if (existingData) setItemArray(existingData);
     setSelectedItem(item);
   }, [item]);
 
@@ -29,41 +28,69 @@ const Content = (props) => {
       text: inputValue,
     };
 
-    const newTextArray = [...(selectedItem.text || []), newItem];
+    const updatedTextArray = [...selectedItem.text || [], newItem];
+    const updatedSelectedItem = {
+      ...selectedItem,
+      text: updatedTextArray,
+    };
 
-    selectedItem.text = newTextArray;
+    setItemArray((prevItemArray) =>
+      prevItemArray.map((prevItem) =>
+        prevItem.title === updatedSelectedItem.title && prevItem.colour === updatedSelectedItem.colour
+          ? updatedSelectedItem
+          : prevItem
+      )
+    );
 
-    const updatedItemArray = itemArray.map((item) => {
-      if (
-        item.title === selectedItem.title &&
-        item.colour === selectedItem.colour
-      ) {
-        return selectedItem;
-      }
-      return item;
-    });
-    setItemArray(updatedItemArray);
-    localStorage.setItem("modalData", JSON.stringify(updatedItemArray));
+    setSelectedItem(updatedSelectedItem);
     setInputValue("");
   };
 
-  // console.log(itemArray);
+  const handleRemove = (itemToRemove) => {
+    const updatedText = selectedItem.text.filter(
+      (textItem) => textItem.dateTime !== itemToRemove.dateTime
+    );
+  
+    const updatedSelectedItem = {
+      ...selectedItem,
+      text: updatedText,
+    };
+  
+    setItemArray((prevItemArray) =>
+      prevItemArray.map((prevItem) =>
+        prevItem.title === updatedSelectedItem.title && prevItem.colour === updatedSelectedItem.colour
+          ? updatedSelectedItem
+          : prevItem
+      )
+    );
+  
+    setSelectedItem(updatedSelectedItem);
+  
+   
+    localStorage.setItem("modalData", JSON.stringify(updatedSelectedItem));
+  };
+  
 
   return (
     <>
       <div className={Styles.content}>
         <ul>
-          {selectedItem &&
-            selectedItem.text ?
+          {selectedItem && selectedItem.text ? (
             selectedItem.text
               .slice()
               .reverse()
               .map((textItem, index) => (
-                <div  className={Styles.ItemBox} key={index}>
-                  <li >{textItem.text}</li>
-                  <p className={Styles.dateTime}> {textItem.dateTime}</p>
+                <div className={Styles.ItemBox} key={index}>
+                  <p className={Styles.delete}>
+                    <MdDeleteSweep onClick={() => handleRemove(textItem)} />
+                  </p>
+                  <li>{textItem.text}</li>
+                  <p className={Styles.dateTime}>{textItem.dateTime}</p>
                 </div>
-              )):<Empty/>}
+              ))
+          ) : (
+            <Empty />
+          )}
         </ul>
       </div>
       <div className={Styles.footer}>

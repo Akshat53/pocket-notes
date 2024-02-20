@@ -10,6 +10,7 @@ const SideBar = (props) => {
   const [openModal, setOpenModal] = useState(false);
   const [items, setItems] = useState([]);
 
+
   useEffect(() => {
     const storedItems = localStorage.getItem("modalData");
     if (storedItems) {
@@ -24,11 +25,19 @@ const SideBar = (props) => {
   const addItemToList = (newItem) => {
     setItems([...items, newItem]);
     localStorage.setItem("modalData", JSON.stringify([...items, newItem]));
+    // console.log(items)
   };
 
   const handleSelect = (item) => {
     selectedItem(item);
   };
+  const handleRemove = (index) => {
+    const updatedItems = items.filter((item, i) => i !== index)
+    // updatedItems.splice(index, 1);
+    setItems(updatedItems);
+    localStorage.setItem("modalData", JSON.stringify(updatedItems));
+  };
+  // console.log(items)
 
   return (
     <div className={Styles.sidebar}>
@@ -41,6 +50,7 @@ const SideBar = (props) => {
               key={index}
               item={item}
               onClick={() => handleSelect(item)}
+              remove={() => handleRemove(index)}
             />
           ))
         ) : (

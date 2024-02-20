@@ -35,20 +35,29 @@
   margin: 20px;
   border-radius: 10px;
 
+
 }
+
 .content ul div li{
   font-size: 15px;
   font-weight: 400;
   padding: 20px;
   
 }
-.content ul div p{
-  /* text-align: right; */
+/* .content ul div p{
+
+ 
+} */
+
+.dateTime{
+  text-align: right;
   font-size: 13px;
   padding: 15px;
   margin-right: 10px;
 }
-
-.dateTime{
+.delete{
+  text-align: right;
+  margin: 0;
+  padding: 10px;
   text-align: right;
 }

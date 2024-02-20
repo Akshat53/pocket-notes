@@ -5,3 +5,12 @@
     justify-content: flex-start;
     padding: 10px 0px;
 }
+.itemMain{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.itemMain svg{
+    font-size: 20px;
+}

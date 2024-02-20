@@ -10,7 +10,7 @@ const WebLayout = () => {
   const selectedItem = (newItem) => {
     setItem(newItem);
   };
-  // console.log(item)
+
 
   return (
     <div className="container">
@@ -21,7 +21,7 @@ const WebLayout = () => {
       <div className="right-side">
         {item ? (
           <>
-            <ContentHeader selectedI={item} />
+            <ContentHeader selectedI={item}  />
             <Content item={item} />
           </>
         ) : (
